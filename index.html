@@ -275,58 +275,58 @@ h2{
 
 </div>
 
-<!-- audio for birthday music -->
-<audio id="music" loop preload="auto">
-  <source src="idk.m4a" type="audio/mp4">
-  Your browser does not support the audio element.
+<audio id="music" loop>
+  <source src="Golden Brown.mp3">
 </audio>
 
 <script>
-  const card=document.getElementById("card")
-  const music=document.getElementById("music")
-  
-  const text="While it took me a while to make this, Im hapi that it turned out well :). Bhalu wishes u the happiest Birthday and wishes that you have many such occasions in your life that keep you hapi throughout '-'. Bhalu is really grateful for our friendship and its awesome that i spend one of the happiest and funniest moments of my years with u guys. You're Friendly, Cute and yeah Mastikhor and thats what makes you special :P. I hope this works on the phone cuz bhalu will be really sed if it doesn't. Cuz its made for you and if u dont see it whats the point :(. Again the best wishes to you :D"
 
-  const message=document.getElementById("message")
-  let i=0
+const card=document.getElementById("card")
+const music=document.getElementById("music")
 
-  function typeWriter(){
-    if(i<text.length){
-      message.innerHTML+=text.charAt(i)
-      i++
-      setTimeout(typeWriter,40)
-      message.scrollTop = message.scrollHeight; // auto-scroll
-    }
+const text="While it took me a while to make this, Im hapi that it turned out well :). Bhalu wishes u the happiest Birthday and wishes that you have many such occasions in your life that keep you hapi throughout '-'. Bhalu is really grateful for our friendship and its awesome that i spend one of the happiest and funniest moments of my years with u guys. You're Friendly, Cute and yeah Mastikhor and thats what makes you special :P. I hope this works on the phone cuz bhalu will be really sed if it doesn't. Cuz its made for you and if u dont see it whats the point :(. Again the best wishes to you :D"
+
+const message=document.getElementById("message")
+
+let i=0
+
+function typeWriter(){
+  if(i<text.length){
+    message.innerHTML+=text.charAt(i)
+    i++
+    setTimeout(typeWriter,40)
+    message.scrollTop = message.scrollHeight; // auto-scroll
   }
+}
 
-  card.onclick=()=>{
-    card.classList.toggle("open")
-    music.currentTime = 0 // start from beginning
-    music.play()
-    typeWriter()
-    petals()
-    fireworks()
-  }
+card.onclick=()=>{
+  card.classList.toggle("open")
+  music.play()
+  typeWriter()
+  petals()
+  fireworks()
+}
 
-  function petals(){
-    for(let i=0;i<40;i++){
-      let p=document.createElement("div")
-      p.className="petal"
-      p.style.left=Math.random()*100+"vw"
-      p.style.animationDuration=(5+Math.random()*5)+"s"
-      document.body.appendChild(p)
-    }
+function petals(){
+  for(let i=0;i<40;i++){
+    let p=document.createElement("div")
+    p.className="petal"
+    p.style.left=Math.random()*100+"vw"
+    p.style.animationDuration=(5+Math.random()*5)+"s"
+    document.body.appendChild(p)
   }
+}
 
-  function fireworks(){
-    for(let i=0;i<25;i++){
-      let f=document.createElement("div")
-      f.className="firework"
-      f.style.left=Math.random()*100+"vw"
-      f.style.top=Math.random()*60+"vh"
-      document.body.appendChild(f)
-    }
+function fireworks(){
+  for(let i=0;i<25;i++){
+    let f=document.createElement("div")
+    f.className="firework"
+    f.style.left=Math.random()*100+"vw"
+    f.style.top=Math.random()*60+"vh"
+    document.body.appendChild(f)
   }
+}
+
 </script>
 
 </body>
